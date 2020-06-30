@@ -103,8 +103,8 @@ client.on('message', (message) => {
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
       {name: '!청소', desc: '텍스트 지움'},
-      {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
-      {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+      {name: '!초대code', desc: '해당 채널의 초대 코드 표기'},
+      {name: '!초대code2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
@@ -120,7 +120,7 @@ client.on('message', (message) => {
     embed.addField('Commands: ', commandStr);
 
     message.channel.send(embed)
-  } else if(message.content == '!초대코드2') {
+  } else if(message.content == '!초대code2') {
     client.guilds.array().forEach(x => {
       x.channels.find(x => x.type == 'text').createInvite({maxAge: 0}) // maxAge: 0은 무한이라는 의미, maxAge부분을 지우면 24시간으로 설정됨
         .then(invite => {
@@ -132,7 +132,7 @@ client.on('message', (message) => {
           }
         })
     });
-  } else if(message.content == '!초대코드') {
+  } else if(message.content == '!초대code') {
     if(message.channel.type == 'dm') {
       return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
     }
