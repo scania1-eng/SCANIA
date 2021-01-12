@@ -50,8 +50,8 @@ client.on('message', (message) => {
     let img = 'https://cdn.discordapp.com/attachments/723852509457678388/727371881765929061/KakaoTalk_20200601_130204766.jpg';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
     embed.setColor('#186de6')
-    embed.setAuthor('server info of SCANIA BOT', img)
-    embed.setFooter(`SCANIA BOT ❤️`)
+    embed.setAuthor('server info of 관리 BOT', img)
+    embed.setFooter(`관리 BOT ❤️`)
     embed.addBlankField()
     embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
     embed.addField('running time', `${duration}`, true);
@@ -81,7 +81,7 @@ client.on('message', (message) => {
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
       .setURL('http://www.naver.com')
-      .setAuthor('스카니아', img, 'http://www.naver.com')
+      .setAuthor('관리', img, 'http://www.naver.com')
       .setThumbnail(img)
       .addBlankField()
       .addField('Inline field title', 'Some value here')
@@ -91,7 +91,7 @@ client.on('message', (message) => {
       .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('스카니아가 만듬', img)
+      .setFooter('스시가 만듬', img)
 
     message.channel.send(embed)
   } else if(message.content == '!help') {
@@ -107,9 +107,9 @@ client.on('message', (message) => {
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of SCANIA BOT', helpImg)
+      .setAuthor('Help of 관리 BOT', helpImg)
       .setColor('#186de6')
-      .setFooter(`SCANIA BOT ❤️`)
+      .setFooter(`관리 BOT ❤️`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -149,9 +149,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 of SCANIA BOT')
+        .setAuthor('공지 of 관리 BOT')
         .setColor('#186de6')
-        .setFooter(`SCANIA BOT ❤️`)
+        .setFooter(`관리 BOT ❤️`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
